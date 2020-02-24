@@ -1,0 +1,35 @@
+{
+  "name": "personalwebsitev2",
+  "version": "1.0.0",
+  "description": "Thomas Wongs personal website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tomaswolfgang/PersonalWebsite.git"
+  },
+  "author": "Thomas Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomaswolfgang/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/tomaswolfgang/PersonalWebsite#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@zeit/next-sass": "^1.0.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "next": "^9.2.2",
+    "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.3.1",
+    "next-transpile-modules": "^3.0.2",
+    "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

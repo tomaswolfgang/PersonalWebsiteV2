@@ -1,0 +1,46 @@
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css?family=Karla');
+a{
+  font-family: 'Karla', sans-serif;
+}
+h1{
+  font-size: 50px;
+  font-family: 'Karla', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h2{
+  font-size: 33px;
+  font-family: 'Karla', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  @include for-tablet-landscape-down{
+    font-size: 28px;
+  }
+}
+h3{
+  font-size: 20px;
+  font-family: 'Karla', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+h4{
+  font-size: 15px;
+  font-family: 'Karla', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+p{
+  font-size: 13px;
+  font-family: 'Karla', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.non-existent{
+  display: none;
+}

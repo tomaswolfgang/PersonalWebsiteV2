@@ -1,0 +1,249 @@
+@import './mixins';
+@import './base';
+@import './variables';
+
+.app{
+  overflow-x: hidden;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+}
+header {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("/static/img/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  box-shadow: inset 0px -300px 300px -150px rgba(0,0,0,0.6);
+  @include for-tablet-portrait-down{
+    flex-direction: column;
+  }
+
+  .profile-container{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 3px white;
+    background-image: url("/static/img/profile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .text-container{
+    color: white;
+    padding:20px;
+    letter-spacing: 0.03em;
+    .title{
+      text-align: left;
+      margin-bottom: 20px;
+      @include for-tablet-portrait-down{
+        text-align: left;
+      }
+    }
+    .description{
+      text-align: left;
+      @include for-tablet-portrait-down{
+        text-align: left;
+      }
+    }
+  }
+}
+.nav-strip{
+  width: 80%;
+  margin: -84px auto 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  @include for-tablet-portrait-down{
+    display:none;
+  }
+  .active{
+    color: $black-high !important;
+    background-color: white !important;
+    border-color: white !important;
+  }
+  .nav-item{
+    cursor: pointer;
+    width:30%;
+    height: 70px;
+    padding-top: 10px;
+    text-align: center;
+    color: $grey-mid;
+    border-radius: 8px 8px 0px 0px;
+    border-top: 4px solid $grey-mid;
+    border-left: 4px solid $grey-mid;
+    border-right: 4px solid $grey-mid;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+    &:hover{
+      color: $grey-high;
+      border-color: $grey-high;
+      background-color: rgba(0,0,0,0.15);
+    }
+  }
+}
+
+.overlay{
+  height: 100% ;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 5;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.overlay-hidden{
+  opacity: 0;
+  left: -100%;
+}
+
+.mobile-title{
+  display: none;
+  @include for-tablet-portrait-down{
+    display:block;
+    text-align: left;
+    max-width: 300px;
+    margin: 0px auto 25px;
+  }
+}
+
+.mobile-hamburger-container{
+  display: none;
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(70,70,70,0.3);
+
+  border-radius: 0 0 5px 0;
+  top: 0px;
+  left: 0px;
+  z-index: 4;
+  @include for-tablet-portrait-down{
+    display: flex;
+  }
+  .mobile-hamburger{
+    height: 60%;
+    width: 60%;
+    cursor: pointer;
+    background-size: contain;
+    background-image: url("/static/img/hamburger-menu.png");
+  }
+}
+
+
+.sidebar-container-hidden{
+  left: -250px !important;
+}
+
+.sidebar-container{
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 10;
+  transition: left 0.3s;
+
+
+  .sidebar{
+    height: 100%;
+    width:250px;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: -1px 0px 14px 0px rgba(0,0,0,0.15);
+    background-color: white;
+    .side-item{
+      background-color: white;
+      color: $grey-mid;
+
+      padding: 25px 25px;
+      width: 200px;
+      transition: all 0.3;
+      &:hover{
+        background-color: rgba(250,250,250,1);
+      }
+    }
+    .side-active{
+      color: $grey-low;
+      background-color: rgba(240,240,240,1);
+    }
+  }
+}
+
+
+
+
+.container{
+  width:1150px;
+  margin:auto;
+  padding:100px 0 0;
+  @include for-desktop-down{
+    width:940px;
+  }
+  @include for-tablet-landscape-down{
+    width:600px;
+  }
+  @include for-tablet-portrait-down{
+    width:100%;
+  }
+
+}
+.personal-container{
+  width: 80%;
+  margin:auto;
+  padding: 100px 0px;
+  text-align: center;
+  .cont-title{
+    text-align: center;
+    color: $black-high;
+    width: 100%;
+    margin-bottom: 40px;
+    @include for-tablet-portrait-down{
+      text-align:left;
+    }
+  }
+
+}
+
+footer{
+  float: left;
+  margin-top: 50px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Karla', sans-serif;
+  color: $grey-mid;
+  font-size: 12px;
+  background-image: linear-gradient(white 50%, rgba(215,215,215,1) 100%);
+  .heart{
+    height: 1rem;
+    width: 1rem;
+    background-size: contain;
+    background-image: url('/static/img/heart.png');
+    color: pink;
+  }
+}
